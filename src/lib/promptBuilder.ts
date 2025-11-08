@@ -44,8 +44,8 @@ export class PromptBuilder {
     };
 
     private static readonly PERSONALITY_MAP: Record<string, string> = {
-        테토: 'soft personality, gentle demeanor, warm and approachable, kind expression, friendly eyes',
-        에겐: 'sharp personality, confident attitude, intense gaze, strong presence, charismatic expression',
+        테토: 'strong personality, intense and charismatic, confident attitude, powerful presence, fierce gaze, dominant expression',
+        에겐: 'soft personality, gentle and introverted, kind demeanor, warm and approachable, friendly eyes, sweet expression',
         혼합: 'balanced personality, versatile character, adaptable expression',
     };
 
@@ -57,7 +57,7 @@ export class PromptBuilder {
     };
 
     private static readonly BASE_PROMPT =
-        'full body shot, full body visible, head to toe, complete body in frame, high quality portrait, professional photography, 8k resolution, detailed, realistic';
+        'East Asian person, Korean features, full body shot, full body visible, head to toe, complete body in frame, high quality portrait, professional photography, 8k resolution, detailed, realistic';
 
     private static readonly NEGATIVE_PROMPT =
         'nsfw, nude, naked, sexual content, inappropriate, low quality, blurry, distorted, ugly, deformed, ' +

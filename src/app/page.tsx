@@ -204,8 +204,8 @@ export default function Home() {
                   className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                 >
                   <option value="">선택하세요</option>
-                  <option value="테토">테토 (온화하고 부드러운 성격)</option>
-                  <option value="에겐">에겐 (강렬하고 카리스마 있는 성격)</option>
+                  <option value="테토">테토 (강렬하고 카리스마 있는 성격)</option>
+                  <option value="에겐">에겐 (부드럽고 내향적인 성격)</option>
                   <option value="혼합">혼합형</option>
                 </select>
               </div>
