@@ -15,53 +15,53 @@ export interface IdealTypeOptions {
 
 export class PromptBuilder {
     private static readonly GENDER_MAP: Record<string, string> = {
-        남성: 'handsome man, masculine features',
-        여성: 'beautiful woman, feminine features',
-        중성: 'androgynous person, gender-neutral features',
+        남성: '잘생긴 남성, 남성적인 특징',
+        여성: '아름다운 여성, 여성적인 특징',
+        중성: '중성적인 사람, 성별 중립적 특징',
     };
 
     private static readonly AGE_MAP: Record<string, string> = {
-        '10대': 'teenager, youthful, age 15-19',
-        '20대': 'young adult, age 20-29',
-        '30대': 'adult, age 30-39',
-        '40대': 'mature adult, age 40-49',
+        '10대': '10대, 청소년, 15-19세',
+        '20대': '20대, 젊은 성인, 20-29세',
+        '30대': '30대, 성인, 30-39세',
+        '40대': '40대, 성숙한 성인, 40-49세',
     };
 
     private static readonly BODY_TYPE_MAP: Record<string, string> = {
-        마른: 'slim, slender body',
-        보통: 'average build, normal body type',
-        탄탄한: 'athletic, fit body, toned muscles',
-        근육질: 'muscular, well-built physique',
+        마른: '마른 체형, 슬림한 몸',
+        보통: '보통 체격, 일반적인 체형',
+        탄탄한: '운동선수형, 탄탄한 몸, 탄탄한 근육',
+        근육질: '근육질, 잘 발달된 체격',
     };
 
     private static readonly STYLE_MAP: Record<string, string> = {
-        캐주얼: 'casual style, comfortable clothing',
-        포멀: 'formal attire, elegant suit or dress',
-        스트리트: 'streetwear, urban fashion, trendy',
-        스포티: 'sporty style, athletic wear',
-        빈티지: 'vintage fashion, retro style',
-        미니멀: 'minimalist fashion, simple elegant clothing',
+        캐주얼: '캐주얼 스타일, 편안한 옷',
+        포멀: '포멀한 복장, 우아한 정장이나 드레스',
+        스트리트: '스트리트 패션, 도시적 패션, 트렌디함',
+        스포티: '스포티 스타일, 운동복',
+        빈티지: '빈티지 패션, 레트로 스타일',
+        미니멀: '미니멀 패션, 심플하고 우아한 옷',
     };
 
     private static readonly PERSONALITY_MAP: Record<string, string> = {
-        테토: 'strong personality, intense and charismatic, confident attitude, powerful presence, fierce gaze, dominant expression',
-        에겐: 'soft personality, gentle and introverted, kind demeanor, warm and approachable, friendly eyes, sweet expression',
-        혼합: 'balanced personality, versatile character, adaptable expression',
+        테토: '강한 성격, 강렬하고 카리스마 있음, 자신감 있는 태도, 강력한 존재감, 날카로운 눈빛, 지배적인 표정',
+        에겐: '부드러운 성격, 온화하고 내향적, 친절한 태도, 따뜻하고 다가가기 쉬움, 친근한 눈빛, 다정한 표정',
+        혼합: '균형잡힌 성격, 다재다능한 성격, 적응력 있는 표정',
     };
 
     private static readonly FACE_TYPE_MAP: Record<string, string> = {
-        계란형: 'oval face shape, balanced proportions',
-        둥근형: 'round face shape, soft curves',
-        각진형: 'angular face shape, defined jawline',
-        긴형: 'long face shape, elongated features',
+        계란형: '계란형 얼굴, 균형잡힌 비율',
+        둥근형: '둥근 얼굴형, 부드러운 곡선',
+        각진형: '각진 얼굴형, 뚜렷한 턱선',
+        긴형: '긴 얼굴형, 길쭉한 이목구비',
     };
 
     private static readonly BASE_PROMPT =
-        'East Asian person, Korean features, full body shot, full body visible, head to toe, complete body in frame, high quality portrait, professional photography, 8k resolution, detailed, realistic';
+        '동양인, 한국인 특징, 전신 샷, 전신이 보이는, 머리부터 발끝까지, 프레임 안에 전체 몸, 고품질 인물사진, 전문 사진, 8K 해상도, 디테일한, 사실적인';
 
     private static readonly NEGATIVE_PROMPT =
-        'nsfw, nude, naked, sexual content, inappropriate, low quality, blurry, distorted, ugly, deformed, ' +
-        'bad anatomy, extra limbs, mutated, disfigured, cartoon, anime, illustration, painting';
+        '성인물, 누드, 나체, 성적 콘텐츠, 부적절한, 낮은 품질, 흐릿한, 왜곡된, 못생긴, 변형된, ' +
+        '나쁜 해부학, 추가 팔다리, 돌연변이, 일그러진, 만화, 애니메이션, 일러스트, 그림';
 
     /**
      * 사용자 선택사항을 Stable Diffusion 프롬프트로 변환
