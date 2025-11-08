@@ -224,6 +224,66 @@ npm run dev
   - SDXL 모델: 이미지당 약 $0.001~0.005
   - 자세한 가격: [Replicate Pricing](https://replicate.com/pricing)
 
+## 💰 광고 설정 (수익화)
+
+이미지 생성 중 Google AdSense 광고를 표시하여 수익을 창출할 수 있습니다.
+
+### 1. Google AdSense 계정 생성
+
+1. [Google AdSense](https://www.google.com/adsense) 방문
+2. 계정 생성 및 사이트 등록
+3. 승인 대기 (보통 1-2주 소요)
+
+### 2. AdSense 코드 설정
+
+승인 후 다음 파일들을 수정하세요:
+
+#### `src/app/layout.tsx`
+```typescript
+// "ca-pub-XXXXXXXXXX"를 본인의 AdSense 게시자 ID로 변경
+<script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+  crossOrigin="anonymous"
+/>
+```
+
+#### `src/components/AdBanner.tsx`
+```typescript
+// "ca-pub-XXXXXXXXXX"를 본인의 AdSense 게시자 ID로 변경
+data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+```
+
+#### `src/app/page.tsx`
+```typescript
+// "1234567890"을 본인의 광고 단위 ID로 변경
+<AdBanner
+  dataAdSlot="YOUR_AD_SLOT_ID"
+  dataAdFormat="auto"
+  dataFullWidthResponsive={true}
+/>
+```
+
+### 3. 광고 단위 생성
+
+1. AdSense 대시보드 > 광고 > 광고 단위
+2. "디스플레이 광고" 생성
+3. 광고 단위 ID 복사
+4. 위의 `dataAdSlot` 값에 붙여넣기
+
+### 4. 테스트
+
+- 로컬 개발 환경에서는 광고가 표시되지 않을 수 있습니다
+- 배포된 프로덕션 환경에서 테스트하세요
+- AdSense 정책을 준수하는지 확인하세요
+
+### 💡 광고 최적화 팁
+
+- 이미지 생성 시간(30-60초)이 길어 광고 노출 시간이 충분합니다
+- 사용자 경험을 해치지 않는 위치에 광고 배치
+- 광고 크기와 형식을 다양하게 테스트
+- Google Analytics와 연동하여 수익 분석
+
 ## 🔧 커스터마이징
 
 ### 다른 AI 모델 사용

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { IdealTypeOptions } from '@/lib/promptBuilder';
+import AdBanner from '@/components/AdBanner';
 
 export default function Home() {
   // 폼 상태
@@ -294,7 +295,7 @@ export default function Home() {
 
               {/* 로딩 상태 */}
               {loading && (
-                <div className="flex flex-col items-center justify-center py-16 space-y-4">
+                <div className="flex flex-col items-center justify-center py-8 space-y-6">
                   <div className="relative">
                     <div className="w-16 h-16 border-4 border-purple-200 dark:border-purple-900 border-t-purple-600 dark:border-t-purple-400 rounded-full animate-spin"></div>
                   </div>
@@ -304,6 +305,18 @@ export default function Home() {
                   <p className="text-gray-500 dark:text-gray-500 text-xs">
                     약 30~60초 정도 소요됩니다
                   </p>
+
+                  {/* 로딩 중 광고 표시 */}
+                  <div className="w-full max-w-md mt-6">
+                    <p className="text-center text-xs text-gray-400 dark:text-gray-500 mb-2">
+                      잠시만 기다려주세요
+                    </p>
+                    <AdBanner
+                      dataAdSlot="1234567890"
+                      dataAdFormat="auto"
+                      dataFullWidthResponsive={true}
+                    />
+                  </div>
                 </div>
               )}
 
